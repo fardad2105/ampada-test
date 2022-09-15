@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'assets/styles/custom-variables';
+@import 'assets/styles/fonts.scss';
+.nav-item a{
+  font-size: $font-weight-600;
+}
+.navbar-collapse li:hover {
+  border-bottom: 1px solid #000;
+}
+.border-bottom {
+  line-height: 4rem;
+}
+.head-title h2 {
+  font-family: newyork;
+}
+.subtitle p {
+  font-family: SfMono;
+}
+.border-bottom-header {
+  border-bottom: 2px solid #000;
+  line-height: 2rem;
+  margin-top: 1rem;
+}
+
+
