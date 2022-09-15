@@ -1,0 +1,47 @@
+image: node:alpine
+stages:
+  - test
+  - test-deploy
+  - build
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+before_script:
+  - npm install
+
+testing:
+  image: trion/ng-cli-karma
+  stage: test
+  environment: test
+  coverage: '/^\s*Statements.*?(\d+(?:\.\d+)?)%/'
+  script:
+    - npm test -- --watch false  --code-coverage
+
+  artifacts:
+    paths:
+      - coverage
+    expire_in: 7 days
+  only:
+    - merge_requests
+    - develop
+    - master
+
+pages:
+  cache:
+    paths:
+      - node_modules/
+
+  stage: test
+  script:
+    - npm run build -- --base-href /cashloanapp-front-portal/
+    - cp public/index.html public/404.html
+  artifacts:
+    paths:
+      - public
+    expire_in: 7 days
+  only:
+    - master
+    - develop
