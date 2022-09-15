@@ -23,3 +23,23 @@
 }
 
 
+// Footer Section
+.footer-list-subjects  {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  color: #fff;
+}
+.footer-list-subjects li:nth-child(odd) {
+  font-family: SfProText;
+  font-weight: bold;
+  margin: 0 5px;
+}
+.footer-list-subjects li:nth-child(even) {
+  font-family: SfMono;
+  margin: 0 5px;
+}
+.footer-desc p {
+  word-wrap: break-word;
+  font-family: newyorkSmall;
+}
