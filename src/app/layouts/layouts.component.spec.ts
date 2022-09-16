@@ -1,4 +1,6 @@
+import { RouterModule } from '@angular/router';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SharedModule } from '../shared/shared.module';
 
 import { LayoutsComponent } from './layouts.component';
 
@@ -8,6 +10,7 @@ describe('LayoutsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [SharedModule,RouterModule],
       declarations: [ LayoutsComponent ]
     })
     .compileComponents();

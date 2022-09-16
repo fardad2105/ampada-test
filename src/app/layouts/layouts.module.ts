@@ -7,6 +7,10 @@ import { MainComponent } from './components/main/main.component';
 import { HeadComponent } from './components/head/head.component';
 import { SharedModule } from '../shared/shared.module';
 import { ArticlesComponent } from './components/articles/articles.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ArticleService } from './services/article.service';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { NgxLoadingModule } from 'ngx-loading';
 
 
 @NgModule({
@@ -18,8 +22,12 @@ import { ArticlesComponent } from './components/articles/articles.component';
   ],
   imports: [
     CommonModule,
+    PaginationModule,
+    HttpClientModule,
     LayoutsRoutingModule,
-    SharedModule
-  ]
+    SharedModule,
+    NgxLoadingModule
+  ],
+  providers: [ArticleService]
 })
 export class LayoutsModule { }

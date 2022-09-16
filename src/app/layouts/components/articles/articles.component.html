@@ -1,1 +1,49 @@
-<p>articles works!</p>
+<div class="row">
+  <h2 class="text-center art-title mt-5">All articles</h2>
+  <div
+    *ngFor="let item of articles"
+    class="col-md-6 col-12 py-4 d-flex article-items"
+  >
+    <div class="card" style="width: 20rem">
+      <img
+        class="card-img-top"
+        width="400"
+        height="200"
+        [src]="item.media"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">
+          {{
+            item.title?.length! > 45
+              ? (item.title | slice: 0:45) + "..."
+              : item.title
+          }}
+        </h5>
+        <p class="card-text">
+          {{
+            item.summary?.length! > 145
+              ? (item.summary | slice: 0:145) + "..."
+              : item.summary
+          }}
+        </p>
+        <a href="#" class="btn btn-primary">Details</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <pagination
+      (pageChanged)="paginationChange($event)"
+      [boundaryLinks]="true"
+      [totalItems]="_totalPages"
+      [maxSize]="10"
+      previousText="&lsaquo;"
+      nextText="&rsaquo;"
+      firstText="&laquo;"
+      lastText="&raquo;"
+    >
+    </pagination>
+  </div>
+</div>
+<ngx-loading [show]="loading"></ngx-loading>
