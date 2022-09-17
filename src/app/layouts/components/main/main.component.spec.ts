@@ -1,5 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { GetTestDataArticle } from 'src/app/core/data/getArticleTestData';
 import { ArticlesDto } from 'src/app/core/model/articleDto';
@@ -32,6 +33,18 @@ describe('MainComponent', () => {
     TestBed.configureTestingModule({
       providers: [
         { provide: ArticleService},
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: {
+              paramMap: {
+                get(): string {
+                  return '123';
+                },
+              },
+            },
+          },
+        },
       ]
     })
 

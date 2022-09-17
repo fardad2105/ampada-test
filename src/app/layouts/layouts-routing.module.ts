@@ -1,3 +1,4 @@
+import { ArticleDetailsComponent } from './components/article-details/article-details.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './components/main/main.component';
@@ -7,7 +8,13 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutsComponent,
-    children: [{ path: '', component: MainComponent }],
+    children: [
+      { path: '', component: MainComponent },
+      {
+        path: 'details',
+        component: ArticleDetailsComponent,
+      },
+    ],
   },
 ];
 

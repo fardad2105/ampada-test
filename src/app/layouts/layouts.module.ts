@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ArticleService } from './services/article.service';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { NgxLoadingModule } from 'ngx-loading';
+import { ArticleDetailsComponent } from './components/article-details/article-details.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { NgxLoadingModule } from 'ngx-loading';
     MainComponent,
     HeadComponent,
     ArticlesComponent,
+    ArticleDetailsComponent,
   ],
   imports: [
     CommonModule,
