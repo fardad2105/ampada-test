@@ -40,7 +40,7 @@ export class ArticlesComponent implements OnInit {
         this.articles = res.articles;
         console.log(this.articles);
       },
-      error: (err) => (this.loading = false),
+      error: (err) => (this.loading = true),
     });
   }
 

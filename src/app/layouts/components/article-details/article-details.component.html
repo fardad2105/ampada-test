@@ -1,7 +1,7 @@
 <app-head [pageName]="'details'"></app-head>
 <div class="row mt-5">
-  <div class="col-6 m-auto author">
-    <div class="d-flex justify-content-between align-items-center">
+  <div class="col-md-6 col-12 m-auto author">
+    <div class="d-md-flex justify-content-between align-items-center">
       <div class="profile d-flex align-items-center">
         <img
           src="../../../../assets/img/image 3.png"
@@ -13,7 +13,7 @@
           <li class="text-dark py-1">{{ artDetails.published_date }}</li>
         </ul>
       </div>
-      <div class="social-media">
+      <div class="social-media text-center">
         <div class="btn-group" role="group" aria-label="Basic outlined example">
           <button type="button" class="btn btn-outline-secondary px-4">
             <i class="fa fa-facebook"></i>
@@ -25,7 +25,7 @@
       </div>
     </div>
 
-    <div class="title-excerpt my-5 w-75 m-auto">
+    <div class="title-excerpt my-5 w-lg-75 m-auto">
       <p>{{ artDetails.title }}</p>
       <p>{{ artDetails.excerpt }}</p>
     </div>
@@ -47,7 +47,7 @@
         Image caption centered this way and I’ll make this a bit longer to
         indicate the amount of line-height.
       </p>
-      <div class="summary-text my-5 w-75 m-auto">
+      <div class="summary-text my-5 w-lg-75 m-auto">
         {{ artDetails.summary }}
       </div>
 

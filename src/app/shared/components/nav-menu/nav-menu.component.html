@@ -1,11 +1,11 @@
 <header id="header-wrap">
   <!-- Navbar Start -->
   <nav
-    class="navbar navbar-expand-md bg-inverse  border-bottom p-0 scrolling-navbar bg-white top-nav-collapse"
+    class="navbar navbar-expand-md bg-inverse  border-bottom p-0 scrolling-navbar top-nav-collapse"
   >
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
-      <a href="index.html" class="navbar-brand"
+      <a [href]="'/'" class="navbar-brand"
         ><img
           src="../../../../assets/img/NORDIC ROSE.png"
           width="150"
@@ -13,6 +13,7 @@
       /></a>
       <button
         class="navbar-toggler"
+        (click)="isCollapsed =! isCollapsed"
         type="button"
         data-toggle="collapse"
         data-target="#navbarCollapse"
@@ -22,7 +23,7 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="navbar-collapse collapse" id="navbarCollapse" style="">
+      <div class="navbar-collapse collapse" [ngClass]="{'show':!isCollapsed}" id="navbarCollapse" style="">
         <ul class="navbar-nav mr-auto w-100 justify-content-end clearfix">
           <li class="nav-item active">
             <a class="nav-link" href="#hero-area"> Blog </a>
