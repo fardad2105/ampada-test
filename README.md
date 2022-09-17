@@ -5,6 +5,10 @@ This project is test project for Ampada Company and you can see design in this l
 https://www.figma.com/file/WfxLSqQIKTFZGtv33H8wbz/The-Challange-Design?node-id=0%3A1
 
 and you can see workflow in Actions part: [workflow](https://github.com/fardad2105/ampada-test/actions)
+
+## Notice
+Please after clone this project run it in dev branch , because all changes merged in this branch
+
 ## Development server
 
 Run `ng serve --open` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
