@@ -1,10 +1,13 @@
 # AmpadaTest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
+This project is test project for Ampada Company and you can see design in this link : 
+https://www.figma.com/file/WfxLSqQIKTFZGtv33H8wbz/The-Challange-Design?node-id=0%3A1
 
+and you can see workflow in Actions part: [workflow](https://github.com/fardad2105/ampada-test/actions)
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `ng serve --open` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -16,7 +19,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` or `npm run test:headless` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Running end-to-end tests
 
