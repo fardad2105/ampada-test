@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "assets/styles/custom-variables";
 @import "assets/styles/fonts.scss";
-
 .nav-item {
   a {
     font-size: $font-weight-600;
@@ -38,6 +37,17 @@
   margin-top: 1rem;
 }
 
+@media only screen and (min-width: 500px) {
+  .w-lg-50 {
+    width: 50%;
+  }
+  .w-lg-75 {
+    width: 75%;
+  }
+}
+
+
+// footer styles
 .footer-list-subjects {
   display: flex;
   justify-content: space-between;
@@ -65,14 +75,22 @@
   }
 }
 
+
+// article styles
 .art-title {
   font-family: newyorExtra;
 }
 
 .article-items {
-  &:nth-child(even) {
-    justify-content: end;
+  @media only screen and (min-width: 760px) {
+    &:nth-child(even) {
+      justify-content: end;
+    }
   }
+  @media only screen and (max-width: 760px) {
+    justify-content: center;
+  }
+
 }
 
 .profile {
