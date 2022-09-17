@@ -1,0 +1,178 @@
+<app-head [pageName]="'details'"></app-head>
+<div class="row mt-5">
+  <div class="col-6 m-auto author">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="profile d-flex align-items-center">
+        <img
+          src="../../../../assets/img/image 3.png"
+          style="border-radius: 50%"
+          alt=""
+        />
+        <ul>
+          <li class="text-dark py-1">{{ artDetails.author }}</li>
+          <li class="text-dark py-1">{{ artDetails.published_date }}</li>
+        </ul>
+      </div>
+      <div class="social-media">
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+          <button type="button" class="btn btn-outline-secondary px-4">
+            <i class="fa fa-facebook"></i>
+          </button>
+          <button type="button" class="btn btn-outline-secondary px-4">
+            <i class="fa fa-twitter"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="title-excerpt my-5 w-75 m-auto">
+      <p>{{ artDetails.title }}</p>
+      <p>{{ artDetails.excerpt }}</p>
+    </div>
+
+    <div class="summary">
+      <h4>Next on the pipeline</h4>
+      <p>
+        Duis eu velit tempus erat egestas efficitur. In hac habitasse platea
+        dictumst. Fusce a nunc eget ligula suscipit finibus. Aenean pharetra
+        quis lacus at viverra. Class aptent taciti sociosqu ad litora torquent
+        per conubia nostra, per inceptos himenaeos. Morbi efficitur auctor
+        metus, id mollis lorem pellentesque id. Nullam posuere maximus dui et
+        fringilla.
+      </p>
+      <div class="text-center">
+        <img [src]="artDetails.media" class="img-fluid" alt="" srcset="" />
+      </div>
+      <p style="font-weight: 600" class="text-center mt-4">
+        Image caption centered this way and I’ll make this a bit longer to
+        indicate the amount of line-height.
+      </p>
+      <div class="summary-text my-5 w-75 m-auto">
+        {{ artDetails.summary }}
+      </div>
+
+      <div class="list-details mt-5">
+        <p>Some details about this news:</p>
+        <ul>
+          <li>rights : {{ artDetails.rights }}</li>
+          <li>
+            published_date_precision: {{ artDetails.published_date_precision }}
+          </li>
+          <li>clean_url: {{ artDetails.clean_url }}</li>
+        </ul>
+      </div>
+
+      <div class="my-5">
+        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+        inceptos himenaeos. Aliquam quis posuere ligula.
+      </div>
+    </div>
+
+    <div class="tnx my-5">
+      <p class="m-0 p-0">Thanks for reading,</p>
+      <p class="m-0 p-0">Mika</p>
+    </div>
+
+    <div class="soical-medai-share my-5">
+      <div
+        class="btn-group w-100"
+        role="group"
+        aria-label="Basic outlined example"
+      >
+        <a type="button" class="btn btn-outline-secondary">
+          <i class="fa fa-facebook"></i
+          ><span class="mx-4">Share on Facebook</span>
+        </a>
+        <a
+          type="button"
+          [href]="artDetails.twitter_account"
+          class="btn btn-outline-secondary"
+        >
+          <i class="fa fa-twitter"></i
+          ><span class="mx-4">Share on Twitter</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="tags d-flex">
+      Tags:
+      <ul>
+        <li class="d-inline mx-1"><a [href]="artDetails.link">product design</a></li>
+        <li class="d-inline mx-1"><a [href]="artDetails.link">Tesla</a></li>
+      </ul>
+    </div>
+
+    <div
+      class="comment d-flex align-items-center my-5 py-5"
+      style="border-top: 1px dotted"
+    >
+      <img
+        src="../../../../assets/img/image 3.png"
+        style="border-radius: 50%"
+        alt=""
+        srcset=""
+      />
+      <p class="mx-4">
+        <span style="font-weight: 600">Mika Matikainen </span> a Design Founder
+        & Advisor, Berlin School of Creative Leadership Executive MBA
+        participant, Zippie advisor, Wolt co-founder, and Nordic Rose
+        stakeholder.
+      </p>
+    </div>
+    <hr />
+    <div class="row suggestion">
+      <h4 class="text-center my-5">What to read next</h4>
+      <div
+        class="col-md-4 col-12 py-4 d-flex article-items"
+        *ngFor="let item of suggestionArticles"
+      >
+        <div class="card" style="width: 20rem">
+          <img
+            class="card-img-top"
+            width="400"
+            height="200"
+            [src]="item.media"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-title">
+              {{
+                item.title?.length! > 45
+                  ? (item.title | slice: 0:45) + "..."
+                  : item.title
+              }}
+            </h5>
+            <p class="card-text">
+              {{
+                item.summary?.length! > 145
+                  ? (item.summary | slice: 0:145) + "..."
+                  : item.summary
+              }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="newsletter p-5 my-5 text-center"
+      style="border: 1px solid; border-top: 4px solid"
+    >
+      <h4>Sign up for the newsletter</h4>
+      <p class="m-0 p-0">
+        If you want relevant updates occasionally, sign up for the
+      </p>
+      <p class="m-0 p-0">private newsletter. Your email is never shared.</p>
+      <div class="input-group w-50 m-auto my-5">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Username"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+        />
+        <span class="input-group-text" id="basic-addon1">Sign Up</span>
+      </div>
+    </div>
+  </div>
+</div>

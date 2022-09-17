@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Observable, of } from 'rxjs';
@@ -17,9 +18,22 @@ describe('ArticlesComponent', () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
       declarations: [ArticlesComponent],
-      providers: [ArticleService],
+      providers: [
+        ArticleService,
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: {
+              paramMap: {
+                get(): string {
+                  return '123';
+                },
+              },
+            },
+          },
+        },
+      ],
     }).compileComponents();
-
 
     fixture = TestBed.createComponent(ArticlesComponent);
     artService = TestBed.inject(ArticleService);

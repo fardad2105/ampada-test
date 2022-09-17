@@ -1,54 +1,116 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'assets/styles/custom-variables';
-@import 'assets/styles/fonts.scss';
-.nav-item a{
-  font-size: $font-weight-600;
+@import "assets/styles/custom-variables";
+@import "assets/styles/fonts.scss";
+
+.nav-item {
+  a {
+    font-size: $font-weight-600;
+  }
 }
-.navbar-collapse li:hover {
-  border-bottom: 1px solid #000;
+
+.navbar-collapse {
+  li {
+    &:hover {
+      border-bottom: 1px solid $dark;
+    }
+  }
 }
+
 .border-bottom {
   line-height: 4rem;
 }
-.head-title h2 {
-  font-family: newyork;
+
+.head-title {
+  h2 {
+    font-family: newyork;
+  }
 }
-.subtitle p {
-  font-family: SfMono;
+
+.subtitle {
+  p {
+    font-family: SfMono;
+  }
 }
+
 .border-bottom-header {
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid $dark;
   line-height: 2rem;
   margin-top: 1rem;
 }
 
-
-// Footer Section
-.footer-list-subjects  {
+.footer-list-subjects {
   display: flex;
   justify-content: space-between;
   list-style-type: none;
-  color: #fff;
-}
-.footer-list-subjects li:nth-child(odd) {
-  font-family: SfProText;
-  font-weight: bold;
-  margin: 0 5px;
-}
-.footer-list-subjects li:nth-child(even) {
-  font-family: SfMono;
-  margin: 0 5px;
-}
-.footer-desc p {
-  word-wrap: break-word;
-  font-family: newyorkSmall;
+  color: $white;
+
+  li {
+    &:nth-child(odd) {
+      font-family: SfProText;
+      font-weight: bold;
+      margin: 0 5px;
+    }
+
+    &:nth-child(even) {
+      font-family: SfMono;
+      margin: 0 5px;
+    }
+  }
 }
 
+.footer-desc {
+  p {
+    word-wrap: break-word;
+    font-family: newyorkSmall;
+  }
+}
 
-// Articles
 .art-title {
-  font-family: newyorExtra ;
+  font-family: newyorExtra;
 }
-.article-items:nth-child(even) {
-  justify-content: end;
+
+.article-items {
+  &:nth-child(even) {
+    justify-content: end;
+  }
+}
+
+.profile {
+  ul {
+    list-style-type: none;
+  }
+}
+
+.tags {
+  ul {
+    list-style-type: none;
+  }
+
+  a {
+    color: $gray  !important;
+  }
+}
+
+.summary {
+  p {
+    font-family: newyorMed;
+  }
+
+  ul {
+    li {
+      font-family: newyorMed;
+    }
+  }
+}
+
+.title-excerpt {
+  p {
+    font-family: newyorMed;
+  }
+}
+
+.comment {
+  p {
+    font-family: newyorMed;
+  }
 }

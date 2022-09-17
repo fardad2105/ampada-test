@@ -2,6 +2,8 @@ import { ArticlesDto } from './../../../core/model/articleDto';
 import { Component, OnInit } from '@angular/core';
 import { PaginationResponse } from 'src/app/shared/contracts/pagination-response.interface';
 import { ArticleService } from '../../services/article.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { identifierName } from '@angular/compiler';
 
 @Component({
   selector: 'app-articles',
@@ -15,8 +17,13 @@ export class ArticlesComponent implements OnInit {
 
   loading = false;
   responseDto!: PaginationResponse<ArticlesDto>;
+  filterSuggestArticles!: ArticlesDto[];
   articles!: ArticlesDto[];
-  constructor(private articleService: ArticleService) {}
+  constructor(
+    private articleService: ArticleService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.getArticles();
@@ -40,5 +47,19 @@ export class ArticlesComponent implements OnInit {
   paginationChange(ev: any) {
     this._page = ev.page;
     this.getArticles();
+  }
+
+  showDetails(art: ArticlesDto) {
+    this.articleService.setArticleDetails(art);
+    this.setSuggestArticles(art);
+    this.router.navigate(['details'], { relativeTo: this.route });
+  }
+
+  setSuggestArticles(art: ArticlesDto) {
+    this.filterSuggestArticles = this.articles.filter(
+      (value) => value._id !== art._id
+    );
+
+    this.articleService.setArticleSuggestion(this.filterSuggestArticles);
   }
 }

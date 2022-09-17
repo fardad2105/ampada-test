@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" *ngIf="pageName == 'main'; else detailsComp">
   <div class="col-6 m-auto py-4 border-bottom-header">
     <img
       src="../../../../assets/img/image 2.png"
@@ -18,3 +18,26 @@
     </div>
   </div>
 </div>
+<ng-template #detailsComp>
+  <div class="row">
+    <div class="col-6 m-auto py-4 border-bottom-header">
+      <div class="head-title">
+        <h2 class="text-center mt-4 w-50 m-auto">
+          A few words about this blog platform, Ghost, and how this site was
+          made
+        </h2>
+      </div>
+      <div class="subtitle text-center mt-3 mb-4">
+        <p class="p-0 m-0">Why Ghost (& Figma) instead of Medium,</p>
+        <p class="p-0 m-0">WordPress or other options?</p>
+      </div>
+
+      <img
+        src="../../../../assets/img/image 2.png"
+        class="img-fluid"
+        alt=""
+        srcset=""
+      />
+    </div>
+  </div>
+</ng-template>
